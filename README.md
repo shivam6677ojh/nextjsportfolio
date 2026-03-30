@@ -21,7 +21,7 @@ Production-ready portfolio built with Next.js App Router, Tailwind CSS, Framer M
 - Trust-based projects section with real GitHub and live links
 - Visual proof gallery for project/certificate artifacts
 - Certificates verification cards with source links
-- AI assistant panel backed by OpenAI API route
+- CV assistant panel backed by a local rules-based API route
 - Contact form with validation and email delivery via Resend
 - SEO metadata via Next.js Metadata API
 
@@ -42,8 +42,6 @@ cp .env.example .env.local
 3. Add your values in `.env.local`:
 
 ```env
-OPENAI_API_KEY=your_openai_key
-OPENAI_MODEL=gpt-4o-mini
 RESEND_API_KEY=your_resend_key
 RESEND_FROM_EMAIL=Portfolio Contact <you@yourdomain.com>
 CONTACT_TO_EMAIL=your_inbox@example.com

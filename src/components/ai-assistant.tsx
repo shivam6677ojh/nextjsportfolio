@@ -13,7 +13,7 @@ const starter: Message[] = [
   {
     role: "assistant",
     content:
-      "Hi, I am Shivam's AI assistant. Ask anything about projects, skills, technologies, education, certificates, theme, resume, or contact details.",
+      "Hi, I am Shivam's CV assistant. Ask about summary, skills, projects, education, certificates, resume, or contact details.",
   },
 ];
 
@@ -64,7 +64,7 @@ export function AIAssistant() {
   return (
     <>
       <button
-        aria-label="Open AI assistant"
+        aria-label="Open CV assistant"
         onClick={() => setOpen((prev) => !prev)}
         className="fixed bottom-5 right-5 z-92 grid h-14 w-14 place-items-center rounded-full border border-[#ff4d4d]/70 bg-[#150707] text-[#ffb9b9] shadow-[0_0_30px_rgba(255,26,26,0.65)] transition hover:scale-105"
       >
@@ -81,8 +81,8 @@ export function AIAssistant() {
             className="fixed bottom-24 right-4 z-91 w-[min(94vw,380px)] overflow-hidden rounded-2xl border border-white/15 bg-[#0e0e0e]/95 shadow-2xl backdrop-blur-xl"
           >
             <header className="border-b border-white/10 px-4 py-3">
-              <p className="text-sm font-semibold text-[#f2f2f2]">AI Portfolio Agent</p>
-              <p className="text-xs text-[#afafaf]">Complete site-aware answers about Shivam&apos;s profile and work.</p>
+              <p className="text-sm font-semibold text-[#f2f2f2]">CV Assistant</p>
+              <p className="text-xs text-[#afafaf]">Answers only from Shivam&apos;s CV data.</p>
             </header>
 
             <div className="max-h-72 space-y-3 overflow-y-auto px-4 py-4">
@@ -106,7 +106,7 @@ export function AIAssistant() {
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 className="min-w-0 flex-1 rounded-xl border border-white/15 bg-[#0a0a0a] px-3 py-2 text-xs text-white outline-none focus:border-[#ff4d4d]"
-                placeholder="Ask about projects, resume, education, skills, theme..."
+                placeholder="Ask about projects, resume, education, skills..."
               />
               <button
                 disabled={loading}
