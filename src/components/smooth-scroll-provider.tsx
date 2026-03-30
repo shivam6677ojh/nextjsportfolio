@@ -10,14 +10,12 @@ export function SmoothScrollProvider() {
     }
 
     const lenis = new Lenis({
+      duration: 1.2,
       smoothWheel: true,
-      smoothTouch: false,
-      duration: 1.15,
-      lerp: 0.085,
-      wheelMultiplier: 0.9,
     });
 
     let frame = 0;
+
     const raf = (time: number) => {
       lenis.raf(time);
       frame = requestAnimationFrame(raf);
