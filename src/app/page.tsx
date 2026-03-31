@@ -21,7 +21,6 @@ const ProjectsSection = dynamic(
 const CertificatesSection = dynamic(
   () => import("@/components/certificates-section").then((mod) => mod.CertificatesSection),
 );
-const VisualsSection = dynamic(() => import("@/components/visuals-section").then((mod) => mod.VisualsSection));
 const AIAssistant = dynamic(() => import("@/components/ai-assistant").then((mod) => mod.AIAssistant));
 
 export default function Home() {
@@ -44,7 +43,6 @@ export default function Home() {
         <SkillsSection />
         <EducationSection />
         <ProjectsSection />
-        <VisualsSection />
         <CertificatesSection />
         <GithubActivitySection />
         <ContactSection />
