@@ -152,7 +152,7 @@ export const projects: Project[] = [
     description:
       "Yoga planning app for organizing daily sessions, tracking progress, and maintaining consistent wellness routines.",
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/shivam6677ojh",
+    githubUrl: "https://github.com/shivam6677ojh/yogaPlanner",
     liveUrl: "https://yoga-planner-ruddy.vercel.app",
     previewImage: "/images/projects/yoga-planner-1.webp",
     highlights: [
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     description:
       "Real-time tracker focused on Delhi water monitoring with live status visibility and clear metric-driven views.",
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/shivam6677ojh",
+    githubUrl: "https://github.com/shivam6677ojh/real-time",
     liveUrl: "https://real-time-ochre.vercel.app/",
     previewImage: "/images/projects/delhi-water-monitor-1.png",
     highlights: [
