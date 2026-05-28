@@ -108,7 +108,7 @@ export function Hero() {
             {[
               [`${projects.length}+`, "Project builds"],
               [`${certificates.length}+`, "Verified certificates"],
-              ["7.49", "B.Tech CSE CGPA"],
+              ["7.54", "B.Tech CSE CGPA"],
             ].map(([value, label]) => (
               <div key={label} className="rounded-2xl border border-white/12 bg-white/4 px-4 py-3 backdrop-blur-lg">
                 <p className="text-xl font-semibold text-[#fff2f2]">{value}</p>

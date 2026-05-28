@@ -9,8 +9,10 @@ const bodySchema = z.object({
 });
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const toEmail = process.env.CONTACT_TO_EMAIL ?? "Ojhashivam936@gmail.com";
+const RESEND_TEST_RECIPIENT = "ojhashivam936@gmail.com";
+const toEmail = (process.env.CONTACT_TO_EMAIL ?? RESEND_TEST_RECIPIENT).trim();
 const fromEmail = process.env.RESEND_FROM_EMAIL ?? "Portfolio Contact <onboarding@resend.dev>";
+const usingResendTestSender = /onboarding@resend\.dev/i.test(fromEmail);
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -24,6 +26,16 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "RESEND_API_KEY is not configured on the server." },
       { status: 500 },
+    );
+  }
+
+  if (usingResendTestSender && toEmail.toLowerCase() !== RESEND_TEST_RECIPIENT) {
+    return NextResponse.json(
+      {
+        error:
+          "Resend test mode is active. Set CONTACT_TO_EMAIL to ojhashivam936@gmail.com, or verify a domain in Resend and set RESEND_FROM_EMAIL to that domain.",
+      },
+      { status: 400 },
     );
   }
 
@@ -47,8 +59,13 @@ export async function POST(request: Request) {
     });
 
     if (error || !data?.id) {
+      const resendErrorMessage =
+        error?.message?.includes("You can only send testing emails to your own email address")
+          ? "Resend test mode allows only ojhashivam936@gmail.com. Verify a domain in Resend and update RESEND_FROM_EMAIL to send to other recipients."
+          : error?.message;
+
       return NextResponse.json(
-        { error: error?.message ?? "Failed to queue email delivery." },
+        { error: resendErrorMessage ?? "Failed to queue email delivery." },
         { status: 502 },
       );
     }

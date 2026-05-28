@@ -226,7 +226,7 @@ export const education: Education[] = [
   {
     id: "lpu-btech-cse",
     institution: "Lovely Professional University",
-    qualification: "Bachelor of Technology in Computer Science and Engineering; CGPA: 7.49",
+    qualification: "Bachelor of Technology in Computer Science and Engineering; CGPA: 7.54",
     location: "Punjab, India",
     period: "Since August 2023",
   },

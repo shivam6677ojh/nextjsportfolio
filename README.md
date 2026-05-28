@@ -47,6 +47,8 @@ RESEND_FROM_EMAIL=Portfolio Contact <you@yourdomain.com>
 CONTACT_TO_EMAIL=your_inbox@example.com
 ```
 
+If you are using `onboarding@resend.dev` as the sender, Resend is in test mode and only allows sending to your own account email (`ojhashivam936@gmail.com`). To send to any other recipient, verify your domain at `resend.com/domains` and update `RESEND_FROM_EMAIL` to use that domain.
+
 4. Run development server:
 
 ```bash
